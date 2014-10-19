@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "GitHub Tab Sizer",
+    "description": "Extension name."
+  },
+  "extDescription": {
+    "message": "Automatically sets tab sizes for files viewed on GitHub.",
+    "description": "Extension description."
+  }
+}
