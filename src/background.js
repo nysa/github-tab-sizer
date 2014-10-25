@@ -1,5 +1,7 @@
 'use strict';
 
+var tabSize = 2;
+
 /**
  * Returns a BlockingResponse object with a redirect URL if the request URL
  * matches a file type extension.
@@ -13,7 +15,7 @@ function requestInterceptor(request) {
   var hasExtGo = /\.go/;
 
   if (!hasParamTs.test(url) && hasExtGo.test(url))
-    return {redirectUrl: addTabSizeParam(url, 2)};
+    return {redirectUrl: addTabSizeParam(url, tabSize)};
 }
 
 /**
@@ -34,3 +36,11 @@ chrome.webRequest.onBeforeRequest.addListener(
   {urls: ['https://github.com/*']},
   ['blocking']
 );
+
+chrome.storage.sync.get({tabSize: tabSize}, function(items) {
+  tabSize = items.tabSize;
+});
+
+chrome.storage.onChanged.addListener(function(items) {
+  tabSize = items.tabSize.newValue;
+});
