@@ -15,5 +15,6 @@
       "vendor/jsurl/url.js",
       "background.js"
     ]
-  }
+  },
+  "options_page": "options.html"
 }
