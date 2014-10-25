@@ -5,6 +5,7 @@
   "default_locale": "en",
   "version": "0.0.1",
   "permissions": [
+    "storage",
     "webRequest",
     "webRequestBlocking",
     "https://github.com/"
