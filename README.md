@@ -22,3 +22,9 @@ $ git clone git://github.com/nysa/github-tabizer
 
 - Configurable tab size (currently only 2)
 - Configurable file types (currently only .go)
+
+## License
+
+Copyright &copy; 2014 Nysa Vann <<nysa@nysavann.com>>
+
+Licensed under the [MIT License](http://opensource.org/licenses/MIT).
