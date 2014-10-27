@@ -20,7 +20,7 @@ $ git clone git://github.com/nysa/github-tabizer
 
 ## Roadmap
 
-- Configurable tab size (currently only 2)
+- ~~Configurable tab size (currently only 2)~~
 - Configurable file types (currently only .go)
 
 ## License
