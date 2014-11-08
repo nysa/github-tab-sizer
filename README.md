@@ -1,4 +1,4 @@
-# GitHub Tabizer
+# GitHub Tab Sizer
 
 Why? Because I'm tired of manually appending `?ts=2` to the URL when viewing .go files on GitHub.
 
@@ -12,7 +12,7 @@ TODO
 
 1. Clone the repository:
 ```
-$ git clone git://github.com/nysa/github-tabizer
+$ git clone git://github.com/nysa/github-tab-sizer
 ```
 2. Navigate to `chrome://extensions/` and enable "Developer mode".
 3. Click on "Load unpacked extension..."
