@@ -4,6 +4,9 @@
   "description": "__MSG_extDescription__",
   "default_locale": "en",
   "version": "0.0.1",
+  "icons": {
+    "128": "icon128.png"
+  },
   "permissions": [
     "storage",
     "webRequest",
