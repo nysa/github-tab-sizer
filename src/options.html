@@ -2,12 +2,24 @@
 <html>
   <head>
     <title>GitHub Tab Sizer Options</title>
+    <link rel="stylesheet" href="options.css">
   </head>
   <body>
     <form id="form">
-      <label>Tab Size</label>
-      <input type="number" id="tab-size" min="1" max="12">
-      <button>Save</button>
+      <div class="settings-row">
+        <label>
+          <span>Tab size:</span>
+          <input type="number" id="tab-size" min="1" max="12">
+        </label>
+      </div>
+
+      <div class="settings-row">
+        <label>
+          <span>File types:</span>
+          <input type="text" id="file-types">
+          <span class="hint">Separate extensions by commas (ex: .go,.py)</span>
+        </label>
+      </div>
     </form>
     <script src="options.js"></script>
   </body>

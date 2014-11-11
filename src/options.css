@@ -1,0 +1,27 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input[type=text],
+input[type=number] {
+  height: 24px;
+  padding: 3px 3px 4px;
+}
+
+label span {
+  display: inline-block;
+  min-width: 100px;
+}
+
+.hint {
+  color: #999;
+  display: block;
+  margin: 6px 0;
+  margin-left: 105px;
+}
+
+.settings-row {
+  margin: 8px 0;
+}
