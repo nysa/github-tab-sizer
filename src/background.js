@@ -1,6 +1,11 @@
 'use strict';
 
 var tabSize = 2;
+var fileTypes = [];
+var defaultItems = {
+  tabSize: tabSize,
+  fileTypes: fileTypes
+};
 
 /**
  * Returns a BlockingResponse object with a redirect URL if the request URL
@@ -12,9 +17,11 @@ var tabSize = 2;
 function requestInterceptor(request) {
   var url = request.url;
   var hasParamTs = /\?.*ts=/;
-  var hasExtGo = /\.go/;
+  var fileTypesRegex = new RegExp(fileTypes.map(function(ft) {
+    return '\\' + ft.trim();
+  }).join('|'), 'i');
 
-  if (!hasParamTs.test(url) && hasExtGo.test(url))
+  if (!hasParamTs.test(url) && fileTypesRegex.test(url))
     return {redirectUrl: addTabSizeParam(url, tabSize)};
 }
 
@@ -37,10 +44,14 @@ chrome.webRequest.onBeforeRequest.addListener(
   ['blocking']
 );
 
-chrome.storage.sync.get({tabSize: tabSize}, function(items) {
+chrome.storage.sync.get(defaultItems, function(items) {
   tabSize = items.tabSize;
+  fileTypes = items.fileTypes;
 });
 
 chrome.storage.onChanged.addListener(function(items) {
-  tabSize = items.tabSize.newValue;
+  if (typeof items.tabSize !== 'undefined')
+    tabSize = items.tabSize.newValue;
+  if (typeof items.fileTypes !== 'undefined')
+    fileTypes = items.fileTypes.newValue;
 });

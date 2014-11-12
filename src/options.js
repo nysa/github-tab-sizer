@@ -1,27 +1,37 @@
 'use strict';
 
-var $form;
 var $tabSize;
+var $fileTypes;
 
 function init() {
-  $form = document.getElementById('form');
   $tabSize = document.getElementById('tab-size');
+  $fileTypes = document.getElementById('file-types');
 
   loadOptions();
-  form.addEventListener('submit', saveOptions);
+  $tabSize.addEventListener('change', saveOptions);
+  $fileTypes.addEventListener('change', saveOptions);
 }
 
 function saveOptions(e) {
-  e.preventDefault();
+  var items = {
+    tabSize: $tabSize.value,
+    fileTypes: $fileTypes.value.trim().split(',')
+  };
 
-  chrome.storage.sync.set({tabSize: $tabSize.value}, function() {
+  chrome.storage.sync.set(items, function() {
     console.log('Saved!');
   });
 }
 
 function loadOptions() {
-  chrome.storage.sync.get({tabSize: 2}, function(items) {
+  var defaultItems = {
+    tabSize: 2,
+    fileTypes: []
+  };
+
+  chrome.storage.sync.get(defaultItems, function(items) {
     $tabSize.value = items.tabSize;
+    $fileTypes.value = items.fileTypes;
   });
 }
 
