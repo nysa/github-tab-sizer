@@ -6,7 +6,7 @@ Why? Because I'm tired of manually appending `?ts=2` to the URL when viewing .go
 
 ### From Chrome Web Store
 
-TODO
+https://chrome.google.com/webstore/detail/github-tab-sizer/djpnapkcpjomnkfekaedkigfomiedpjf
 
 ### From source
 
