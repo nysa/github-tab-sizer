@@ -18,11 +18,6 @@ $ git clone git://github.com/nysa/github-tab-sizer
 3. Click on "Load unpacked extension..."
 4. Open the directory `/src` from the project root.
 
-## Roadmap
-
-- ~~Configurable tab size (currently only 2)~~
-- Configurable file types (currently only .go)
-
 ## License
 
 Copyright &copy; 2014 Nysa Vann <<nysa@nysavann.com>>
