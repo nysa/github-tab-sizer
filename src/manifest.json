@@ -1,9 +1,12 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
   "description": "__MSG_extDescription__",
-  "default_locale": "en",
   "version": "0.0.1",
+  "author": "Nysa Vann",
+  "homepage_url": "https://github.com/nysa/github-tab-sizer",
+  "default_locale": "en",
   "icons": {
     "128": "icon128.png"
   },
